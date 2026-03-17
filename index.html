@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="QuadraCore Labs — Hardware, Software, Automation & AI Solutions for startups, businesses, researchers, and students worldwide." />
+  <title>QuadraCore Labs — Smart Hardware & Software Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon placeholder: replace with your actual favicon -->
+  <!-- <link rel="icon" type="image/png" href="favicon.png" /> -->
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <header id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+
+        <!-- Logo -->
+        <a href="#" class="nav-logo">
+          <div class="nav-logo-icon">
+            <!-- Cpu icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/>
+              <line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/>
+              <line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/>
+              <line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/>
+              <line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+            </svg>
+          </div>
+          <span class="nav-logo-text">QuadraCore<span>.</span></span>
+        </a>
+
+        <!-- Desktop nav links -->
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#team">Team</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="nav-cta">Get a Quote</a>
+        </nav>
+
+        <!-- Mobile toggle -->
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span id="menu-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/>
+            </svg>
+          </span>
+          <span id="close-icon" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#team">Team</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section id="hero" class="bg-grid-pattern">
+    <div class="hero-blob-1"></div>
+    <div class="hero-blob-2"></div>
+    <div class="hero-sheen"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <!-- Terminal icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
+          </svg>
+          <span>Hardware • Software • Automation • AI</span>
+        </div>
+
+        <h1 class="hero-h1">
+          Turning Ideas into <span class="text-gradient">Reliable Systems</span> that Customers Love
+        </h1>
+
+        <p class="hero-p">
+          We design intelligent hardware, automation, AI pipelines, and full-stack software for startups, businesses, and research teams. Fast builds, clean documentation, and measurable outcomes.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#services" class="btn-primary">
+            View Services
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn-secondary">Get a Free Consultation</a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="proof-item">
+            <span class="proof-title">Delivery in Weeks</span>
+            <span class="proof-text">Rapid prototyping with clear milestones.</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-title">Full-Stack + Hardware</span>
+            <span class="proof-text">Boards, firmware, apps, and cloud.</span>
+          </div>
+          <div class="proof-item">
+            <span class="proof-title">Documentation Included</span>
+            <span class="proof-text">Reports, diagrams, and handoff.</span>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">40+</span>
+            <span class="hero-stat-label">Projects Delivered</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">4.8/5</span>
+            <span class="hero-stat-label">Client Satisfaction</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">24/7</span>
+            <span class="hero-stat-label">Support &amp; Updates</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card anim-fade-scale">
+          <div class="hero-card-header">
+            <span class="hero-card-title">Live Build Snapshot</span>
+            <span class="hero-card-tag">In Progress</span>
+          </div>
+          <div class="hero-card-body">
+            <div class="hero-metric">
+              <p class="hero-metric-label">Prototype Stage</p>
+              <p class="hero-metric-value">MVP v2.1</p>
+            </div>
+            <div class="hero-metric">
+              <p class="hero-metric-label">Integration</p>
+              <p class="hero-metric-value">Cloud + Edge</p>
+            </div>
+            <div class="hero-metric">
+              <p class="hero-metric-label">Next Milestone</p>
+              <p class="hero-metric-value">Pilot Launch</p>
+            </div>
+          </div>
+          <div class="hero-card-footer">
+            <div class="hero-signal">
+              <span class="hero-signal-dot"></span>
+              <span>Weekly progress updates</span>
+            </div>
+            <a href="#contact" class="hero-card-link">Start Your Build</a>
+          </div>
+        </div>
+
+        <div class="hero-mini">
+          <div class="mini-card">
+            <h4>Recent Results</h4>
+            <p>Reduced sensor latency by 42% on an industrial pilot.</p>
+          </div>
+          <div class="mini-card">
+            <h4>Deployment Ready</h4>
+            <p>CI/CD, docs, and monitoring included in every delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-fade-bottom"></div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       TRUST
+  ══════════════════════════════════════ -->
+  <section id="trust" class="section">
+    <div class="container">
+      <p class="trust-label">Trusted by founders, labs, and product teams worldwide</p>
+      <div class="trust-logos">
+        <span>NovaLabs</span>
+        <span>Atlas Robotics</span>
+        <span>IonX Research</span>
+        <span>Pulse Analytics</span>
+        <span>BrightGrid</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Text -->
+        <div class="about-text anim-fade-left">
+          <span class="label">Who We Are</span>
+          <h2>A powerhouse team of innovators and creators.</h2>
+          <p>QuadraCore Labs is a focused team of specialized developers and engineers. We live at the intersection of bits and atoms, mastering both software engineering and physical hardware prototyping.</p>
+          <p>From AI data analysis to robust web and mobile deployments, we build end-to-end solutions that scale. Whether you're a student needing a semester project or a startup requiring full architecture, we deliver excellence with clarity.</p>
+          <div class="about-list">
+            <div class="about-list-item">
+              <span class="about-dot"></span>
+              <span>Dedicated technical lead on every engagement.</span>
+            </div>
+            <div class="about-list-item">
+              <span class="about-dot"></span>
+              <span>Weekly progress demos and transparent timelines.</span>
+            </div>
+            <div class="about-list-item">
+              <span class="about-dot"></span>
+              <span>Clear, professional documentation included.</span>
+            </div>
+          </div>
+          <a href="#team">
+            Meet the Team
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid stagger">
+          <!-- Card 1 -->
+          <div class="stat-card anim-fade-up">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            </div>
+            <div class="stat-value">4</div>
+            <div class="stat-label">Expert Engineers</div>
+          </div>
+          <!-- Card 2 -->
+          <div class="stat-card anim-fade-up">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            </div>
+            <div class="stat-value">IoT</div>
+            <div class="stat-label">Hardware Prototyping</div>
+          </div>
+          <!-- Card 3 -->
+          <div class="stat-card anim-fade-up">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
+            </div>
+            <div class="stat-value">Data</div>
+            <div class="stat-label">AI &amp; ML Models</div>
+          </div>
+          <!-- Card 4 -->
+          <div class="stat-card anim-fade-up">
+            <div class="stat-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="stat-value">Apps</div>
+            <div class="stat-label">Web &amp; Mobile</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       SERVICES
+  ══════════════════════════════════════ -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-heading centered anim-fade-up">
+        <span class="subtitle">What We Do</span>
+        <h2>Comprehensive Engineering Services</h2>
+        <p class="section-lead">From quick prototypes to production-grade systems, we build with clarity, testing, and measurable outcomes.</p>
+      </div>
+      <div class="services-grid stagger" id="services-grid">
+        <!-- Rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROCESS
+  ══════════════════════════════════════ -->
+  <section id="process" class="section">
+    <div class="container">
+      <div class="section-heading centered anim-fade-up">
+        <span class="subtitle">How We Work</span>
+        <h2>A Clear, Reliable Process from Idea to Launch</h2>
+      </div>
+      <div class="process-grid stagger">
+        <div class="process-card anim-fade-up">
+          <span class="process-step">01</span>
+          <h3>Discovery &amp; Scope</h3>
+          <p>We map requirements, success criteria, and timelines to avoid surprises.</p>
+        </div>
+        <div class="process-card anim-fade-up">
+          <span class="process-step">02</span>
+          <h3>Design &amp; Prototype</h3>
+          <p>Rapid prototypes validate ideas early with usable demos and schematics.</p>
+        </div>
+        <div class="process-card anim-fade-up">
+          <span class="process-step">03</span>
+          <h3>Build &amp; Integrate</h3>
+          <p>We engineer robust hardware + software systems with clean, testable code.</p>
+        </div>
+        <div class="process-card anim-fade-up">
+          <span class="process-step">04</span>
+          <h3>Launch &amp; Support</h3>
+          <p>Deployment, documentation, and reliable support after handoff.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       INDUSTRIES
+  ══════════════════════════════════════ -->
+  <section id="industries" class="section">
+    <div class="container">
+      <div class="section-heading centered anim-fade-up">
+        <span class="subtitle">Where We Deliver</span>
+        <h2>Industries We Build For</h2>
+      </div>
+      <div class="industries-grid stagger">
+        <div class="industry-card anim-fade-scale" style="--img: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80');">
+          <div class="industry-overlay"></div>
+          <div class="industry-content">
+            <h3>Smart Manufacturing</h3>
+            <p>Industrial automation, sensor networks, and predictive analytics.</p>
+          </div>
+        </div>
+        <div class="industry-card anim-fade-scale" style="--img: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80');">
+          <div class="industry-overlay"></div>
+          <div class="industry-content">
+            <h3>EdTech &amp; Research</h3>
+            <p>Capstone projects, lab instrumentation, and data-driven tools.</p>
+          </div>
+        </div>
+        <div class="industry-card anim-fade-scale" style="--img: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80');">
+          <div class="industry-overlay"></div>
+          <div class="industry-content">
+            <h3>Startups &amp; SaaS</h3>
+            <p>MVPs, dashboards, and scalable backend architectures.</p>
+          </div>
+        </div>
+        <div class="industry-card anim-fade-scale" style="--img: url('https://images.unsplash.com/photo-1477239439998-839196943351?auto=format&fit=crop&w=900&q=80');">
+          <div class="industry-overlay"></div>
+          <div class="industry-content">
+            <h3>Energy &amp; Sustainability</h3>
+            <p>IoT monitoring, solar systems, and efficiency automation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       PROJECTS
+  ══════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-heading centered anim-fade-up">
+        <span class="subtitle">Our Portfolio</span>
+        <h2>Featured Case Studies &amp; Projects</h2>
+        <p class="section-lead">Each build includes clear scope, iterative testing, and measurable results.</p>
+      </div>
+      <div class="projects-grid stagger" id="projects-grid">
+        <!-- Rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       WHY CHOOSE US
+  ══════════════════════════════════════ -->
+  <section id="why-choose-us" class="section">
+    <div class="why-blob"></div>
+    <div class="container">
+      <div class="why-grid">
+
+        <!-- Orbit visual -->
+        <div class="orbit-wrap anim-fade-scale">
+          <div class="orbit-outer">
+            <div class="orbit-ring-1"></div>
+            <div class="orbit-ring-2"></div>
+            <div class="orbit-inner">
+              <h3 class="orbit-text">The <br/><span class="text-gradient">QuadraCore</span><br/> Advantage</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reasons -->
+        <div>
+          <div class="section-heading anim-fade-up">
+            <span class="subtitle">Why Choose Us</span>
+            <h2>Built for Speed, Engineered for Quality</h2>
+          </div>
+          <div class="reasons-list stagger" id="reasons-list">
+            <!-- Rendered by script.js -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       TEAM
+  ══════════════════════════════════════ -->
+  <section id="team" class="section">
+    <div class="container">
+      <div class="section-heading centered anim-fade-up">
+        <span class="subtitle">Our Specialists</span>
+        <h2>Meet the Minds Behind the Tech</h2>
+      </div>
+      <div class="team-grid stagger" id="team-grid">
+        <!-- Rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════════ -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-heading centered anim-fade-up">
+        <span class="subtitle">Testimonials</span>
+        <h2>What Our Clients Say</h2>
+      </div>
+      <div class="testimonials-grid stagger" id="testimonials-grid">
+        <!-- Rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CTA BAND
+  ══════════════════════════════════════ -->
+  <section id="cta-band" class="section">
+    <div class="container">
+      <div class="cta-card anim-fade-up">
+        <div>
+          <h2>Have a bold idea? We can build it.</h2>
+          <p>From rapid prototypes to production-ready systems, we deliver with speed, clarity, and care.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#contact" class="btn-primary">Get a Free Consultation</a>
+          <a href="#projects" class="btn-secondary">View Case Studies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-heading centered anim-fade-up">
+        <span class="subtitle">FAQ</span>
+        <h2>Answers Before You Reach Out</h2>
+        <p class="section-lead">Transparent timelines, scope, and deliverables so you can decide quickly.</p>
+      </div>
+      <div class="faq-grid">
+        <details class="faq-item anim-fade-up" open>
+          <summary>How fast can you deliver a prototype?</summary>
+          <p>Most MVPs take 2 to 6 weeks depending on hardware complexity, scope, and validation requirements.</p>
+        </details>
+        <details class="faq-item anim-fade-up">
+          <summary>Do you handle both hardware and software?</summary>
+          <p>Yes. We deliver full systems: firmware, PCBs, cloud services, dashboards, and mobile apps when needed.</p>
+        </details>
+        <details class="faq-item anim-fade-up">
+          <summary>What’s included in documentation?</summary>
+          <p>We provide design diagrams, code walkthroughs, setup guides, and handoff instructions for your team.</p>
+        </details>
+        <details class="faq-item anim-fade-up">
+          <summary>Can you work with student budgets?</summary>
+          <p>Absolutely. We offer scoped engagement packages for students, research teams, and startups.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="contact-blob"></div>
+    <div class="container">
+      <div class="section-heading centered anim-fade-up">
+        <span class="subtitle">Get In Touch</span>
+        <h2>Ready to Start Your Project?</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="contact-info anim-fade-left">
+          <h3>Let's build something amazing together.</h3>
+          <p>Whether you have a fully fleshed out specification or just an idea on a napkin, our team is ready to engineer your solution. Contact us today for a free consultation.</p>
+
+          <div class="contact-highlights">
+            <div class="highlight-card">
+              <h4>Response Time</h4>
+              <p>We reply within 24 hours with next steps.</p>
+            </div>
+            <div class="highlight-card">
+              <h4>Free Scope Call</h4>
+              <p>We help you define requirements and timelines.</p>
+            </div>
+          </div>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 11 19.79 19.79 0 0 1 1 2.18 2 2 0 0 1 2.96 0H6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Call / WhatsApp</p>
+                <p class="contact-item-value">
+                  <a href="https://wa.me/923154097074" target="_blank" rel="noopener">WhatsApp</a>
+                  <span class="contact-sep">•</span>
+                  <a href="tel:+923154097074" target="_blank" rel="noopener">+92 315 4097074</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Email Us</p>
+                <p class="contact-item-value"><a href="mailto:shoaibjaveed2005@gmail.com">shoaibjaveed2005@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p class="contact-item-label">Location</p>
+                <p class="contact-item-value">Global Remote Service</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-wrap anim-fade-right">
+          <form id="contact-form" method="POST" action="https://formspree.io/f/mwvrwqzk" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="input-name">Full Name</label>
+                <input class="form-input" id="input-name" type="text" placeholder="John Doe" autocomplete="name" />
+                <span class="form-error" id="err-name">Please enter your name.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="input-email">Email Address</label>
+                <input class="form-input" id="input-email" type="email" placeholder="john@example.com" autocomplete="email" />
+                <span class="form-error" id="err-email">Please enter a valid email.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="input-phone">Phone / WhatsApp</label>
+              <input class="form-input" id="input-phone" type="tel" placeholder="+1 234 567 8900" autocomplete="tel" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="input-message">Project Details</label>
+              <textarea class="form-textarea" id="input-message" placeholder="Tell us about your project, timeline, and requirements..."></textarea>
+              <span class="form-error" id="err-message">Please describe your project.</span>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer>
+    <div class="footer-top-line"></div>
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="nav-logo-icon" style="width:2rem;height:2rem;border-radius:0.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            </div>
+            <span class="nav-logo-text">QuadraCore<span>.</span></span>
+          </a>
+          <p>Hardware • Software • Automation • AI Solutions. Turning your most ambitious ideas into reality with cutting-edge technology.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/Kali2005sudo" class="social-btn" aria-label="GitHub" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </a>
+            <a href="mailto:shoaibjaveed2005@gmail.com" class="social-btn" aria-label="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Software Engineering</a></li>
+            <li><a href="#services">Hardware Prototyping</a></li>
+            <li><a href="#services">AI &amp; Machine Learning</a></li>
+            <li><a href="#services">IoT Automation</a></li>
+            <li><a href="#services">Web Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul>
+            <li class="footer-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 11 19.79 19.79 0 0 1 1 2.18 2 2 0 0 1 2.96 0H6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 7.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span class="footer-contact-lines">
+                <a href="https://wa.me/923154097074" target="_blank" rel="noopener">WhatsApp</a>
+                <a href="tel:+923154097074" target="_blank" rel="noopener">Call: +92 315 4097074</a>
+              </span>
+            </li>
+            <li class="footer-contact-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span><a href="mailto:shoaibjaveed2005@gmail.com">shoaibjaveed2005@gmail.com</a></span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="footer-year"></span> QuadraCore Labs. All rights reserved.</p>
+        <p>Engineered with <span class="footer-heart">♥</span> for the future.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════
+       TOAST
+  ══════════════════════════════════════ -->
+  <div id="form-toast" role="status" aria-live="polite">
+    <span class="toast-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </span>
+    <span class="toast-text">Message sent! We'll get back to you soon.</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
