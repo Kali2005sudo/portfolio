@@ -33,7 +33,10 @@ const PROJECTS = [
     title: 'Learning Management System',
     category: 'Software',
     tech: 'Python + PostgreSQL',
-    image: 'images/photo-1516321318423-f06f85e504b3.jpg',
+    image: 'images/photo-1516321318423-f06f85e504b3.webp',
+    fallbackImage: 'images/photo-1516321318423-f06f85e504b3.jpg',
+    width: 1600,
+    height: 1067,
     summary: 'A full-stack LMS with role-based access, lesson flows, and analytics dashboards.',
     result: '3x faster onboarding',
   },
@@ -41,7 +44,10 @@ const PROJECTS = [
     title: 'Smart Home Automation',
     category: 'Hardware + IoT',
     tech: 'Arduino, Sensors',
-    image: 'images/photo-1558002038-1055907df827.jpg',
+    image: 'images/photo-1558002038-1055907df827.webp',
+    fallbackImage: 'images/photo-1558002038-1055907df827.jpg',
+    width: 1600,
+    height: 1067,
     summary: 'Multi-sensor automation with secure mobile control and custom rule engine.',
     result: '42% latency drop',
   },
@@ -49,7 +55,10 @@ const PROJECTS = [
     title: 'Security Monitoring System',
     category: 'IoT + Vision',
     tech: 'Raspberry Pi, OpenCV',
-    image: 'images/photo-1557597774-9d273605dfa9.jpg',
+    image: 'images/photo-1557597774-9d273605dfa9.webp',
+    fallbackImage: 'images/photo-1557597774-9d273605dfa9.jpg',
+    width: 1600,
+    height: 1076,
     summary: 'Real-time alerts, anomaly detection, and dashboard monitoring for facilities.',
     result: '99.1% uptime',
   },
@@ -57,7 +66,10 @@ const PROJECTS = [
     title: 'Solar Company Website',
     category: 'Web Development',
     tech: 'React, Tailwind',
-    image: 'images/photo-1508514177221-188b1cf16e9d.jpg',
+    image: 'images/photo-1508514177221-188b1cf16e9d.webp',
+    fallbackImage: 'images/photo-1508514177221-188b1cf16e9d.jpg',
+    width: 1600,
+    height: 1065,
     summary: 'Conversion-focused redesign with fast performance and SEO-ready structure.',
     result: '+28% leads',
   },
@@ -65,7 +77,10 @@ const PROJECTS = [
     title: 'Data Analysis Dashboard',
     category: 'Analytics',
     tech: 'Python, Pandas, Plotly',
-    image: 'images/photo-1551288049-bebda4e38f71.jpg',
+    image: 'images/photo-1551288049-bebda4e38f71.webp',
+    fallbackImage: 'images/photo-1551288049-bebda4e38f71.jpg',
+    width: 1600,
+    height: 1067,
     summary: 'Automated KPI tracking with rich charts and weekly insights reports.',
     result: '8 hrs saved/week',
   },
@@ -73,7 +88,10 @@ const PROJECTS = [
     title: 'AI Image Recognition',
     category: 'Machine Learning',
     tech: 'TensorFlow, Neural Networks',
-    image: 'images/photo-1620712943543-bcc4688e7485.jpg',
+    image: 'images/photo-1620712943543-bcc4688e7485.webp',
+    fallbackImage: 'images/photo-1620712943543-bcc4688e7485.jpg',
+    width: 1600,
+    height: 2000,
     summary: 'Custom model training and deployment pipeline for edge inference.',
     result: '94% accuracy',
   },
@@ -84,25 +102,37 @@ const TEAM = [
     name: 'Shoaib Javeed',
     role: 'Python Backend Developer',
     focus: 'APIs, automation pipelines, and scalable architecture.',
-    image: 'images/shoaib1.png',
+    image: 'images/shoaib1.webp',
+    fallbackImage: 'images/shoaib1.png',
+    width: 1024,
+    height: 1027,
   },
   {
     name: 'Amara Khan',
     role: 'IoT / Hardware Engineer',
     focus: 'PCB design, embedded firmware, and sensor integration.',
-    image: 'images/amara.jpeg',
+    image: 'images/amara.webp',
+    fallbackImage: 'images/amara.jpeg',
+    width: 225,
+    height: 225,
   },
   {
     name: 'Qasim Liaqat',
     role: 'Web & Mobile Developer',
     focus: 'UI engineering, performance, and product delivery.',
-    image: 'images/qasim.png',
+    image: 'images/qasim.webp',
+    fallbackImage: 'images/qasim.png',
+    width: 1024,
+    height: 1024,
   },
   {
     name: 'Muhammad Murtaza',
     role: 'Data Analyst & Docs',
     focus: 'Analytics, reporting, and client-ready documentation.',
-    image: 'images/murtaza.jpeg',
+    image: 'images/murtaza.webp',
+    fallbackImage: 'images/murtaza.jpeg',
+    width: 413,
+    height: 531,
   },
 ];
 
@@ -232,11 +262,14 @@ function renderServices() {
 function renderProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
-  grid.innerHTML = PROJECTS.map(p => `
-    <div class="project-card anim-fade-up">
+  grid.innerHTML = PROJECTS.map((p, i) => `
+    <div class="project-card reveal">
       <div class="project-img-wrap">
         <div class="project-overlay"></div>
-        <img src="${p.image}" alt="${p.title}" loading="lazy" />
+        <picture>
+          <source srcset="${p.image}" type="image/webp" />
+          <img src="${p.fallbackImage}" alt="${p.title}" loading="${i === 0 ? 'eager' : 'lazy'}" width="${p.width}" height="${p.height}" />
+        </picture>
         <span class="project-category">${p.category}</span>
       </div>
       <div class="project-body">
@@ -256,10 +289,13 @@ function renderProjects() {
 function renderTeam() {
   const grid = document.getElementById('team-grid');
   if (!grid) return;
-  grid.innerHTML = TEAM.map(m => `
-    <div class="team-card anim-fade-up">
+  grid.innerHTML = TEAM.map((m, i) => `
+    <div class="team-card reveal">
       <div class="team-img-wrap">
-        <img src="${m.image}" alt="${m.role}" loading="lazy" />
+        <picture>
+          <source srcset="${m.image}" type="image/webp" />
+          <img src="${m.fallbackImage}" alt="${m.role}" loading="${i === 0 ? 'eager' : 'lazy'}" width="${m.width}" height="${m.height}" />
+        </picture>
         <div class="team-img-overlay"></div>
         <div class="team-role-badge">
           <p>${m.role}</p>
@@ -367,6 +403,22 @@ function initScrollAnimations() {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   els.forEach(el => observer.observe(el));
+}
+
+function initRevealCards() {
+  const cards = document.querySelectorAll('.project-card.reveal, .team-card.reveal');
+  if (!cards.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+
+  cards.forEach(card => observer.observe(card));
 }
 
 /* ── COUNTERS ─────────────────────────────────────────────── */
@@ -494,6 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Re-observe after dynamic content is rendered
   requestAnimationFrame(() => {
     initScrollAnimations();
+    initRevealCards();
   });
 
   initNavbar();
