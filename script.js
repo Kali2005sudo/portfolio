@@ -89,7 +89,7 @@ const PROJECTS = [
     category: 'Machine Learning',
     tech: 'TensorFlow, Neural Networks',
     image: 'images/photo-1620712943543-bcc4688e7485.webp',
-    fallbackImage: 'images/photo-1620712943543-bcc4688e7485.jpg',
+    fallbackImage: 'images/photo-1620712943543-bcc4688e7485.webp',
     width: 1600,
     height: 2000,
     summary: 'Custom model training and deployment pipeline for edge inference.',
