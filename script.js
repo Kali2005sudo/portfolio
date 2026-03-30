@@ -268,7 +268,7 @@ function renderProjects() {
         <div class="project-overlay"></div>
         <picture>
           <source srcset="${p.image}" type="image/webp" />
-          <img src="${p.fallbackImage}" alt="${p.title}" loading="${i === 0 ? 'eager' : 'lazy'}" width="${p.width}" height="${p.height}" />
+          <img src="${p.fallbackImage}" alt="${p.title}" loading="lazy" width="${p.width}" height="${p.height}" />
         </picture>
         <span class="project-category">${p.category}</span>
       </div>
