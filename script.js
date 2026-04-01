@@ -39,6 +39,7 @@ const PROJECTS = [
     height: 1067,
     summary: 'A full-stack LMS with role-based access, lesson flows, and analytics dashboards.',
     result: '3x faster onboarding',
+    tags: ['web', 'automation'],
   },
   {
     title: 'Smart Home Automation',
@@ -50,6 +51,7 @@ const PROJECTS = [
     height: 1067,
     summary: 'Multi-sensor automation with secure mobile control and custom rule engine.',
     result: '42% latency drop',
+    tags: ['hardware', 'automation', 'mobile'],
   },
   {
     title: 'Security Monitoring System',
@@ -61,6 +63,7 @@ const PROJECTS = [
     height: 1076,
     summary: 'Real-time alerts, anomaly detection, and dashboard monitoring for facilities.',
     result: '99.1% uptime',
+    tags: ['hardware', 'ai', 'automation'],
   },
   {
     title: 'Solar Company Website',
@@ -72,6 +75,7 @@ const PROJECTS = [
     height: 1065,
     summary: 'Conversion-focused redesign with fast performance and SEO-ready structure.',
     result: '+28% leads',
+    tags: ['web'],
   },
   {
     title: 'Data Analysis Dashboard',
@@ -83,6 +87,7 @@ const PROJECTS = [
     height: 1067,
     summary: 'Automated KPI tracking with rich charts and weekly insights reports.',
     result: '8 hrs saved/week',
+    tags: ['ai', 'web'],
   },
   {
     title: 'AI Image Recognition',
@@ -94,6 +99,7 @@ const PROJECTS = [
     height: 2000,
     summary: 'Custom model training and deployment pipeline for edge inference.',
     result: '94% accuracy',
+    tags: ['ai', 'automation'],
   },
 ];
 
@@ -263,12 +269,12 @@ function renderProjects() {
   const grid = document.getElementById('projects-grid');
   if (!grid) return;
   grid.innerHTML = PROJECTS.map((p, i) => `
-    <div class="project-card reveal">
+    <div class="project-card reveal" data-tags="${(p.tags || []).join(',')}">
       <div class="project-img-wrap">
         <div class="project-overlay"></div>
         <picture>
           <source srcset="${p.image}" type="image/webp" />
-          <img src="${p.fallbackImage}" alt="${p.title}" loading="lazy" width="${p.width}" height="${p.height}" />
+          <img src="${p.fallbackImage}" alt="${p.title}" loading="lazy" decoding="async" width="${p.width}" height="${p.height}" />
         </picture>
         <span class="project-category">${p.category}</span>
       </div>
@@ -279,7 +285,7 @@ function renderProjects() {
         <p class="project-summary">${p.summary}</p>
         <div class="project-footer">
           <span class="project-result">Result: ${p.result}</span>
-          <a class="project-link" href="#contact">View Case Study</a>
+          <button class="project-link" type="button" data-project-index="${i}">View Details</button>
         </div>
       </div>
     </div>
@@ -383,6 +389,196 @@ function initNavbar() {
       menuIcon.style.display  = 'block';
       closeIcon.style.display = 'none';
     });
+  });
+}
+
+/* ── QUICK ACTION MENU ───────────────────────────────────── */
+
+function initQuickMenu() {
+  const fab = document.getElementById('quick-fab');
+  const panel = document.getElementById('quick-panel');
+  const closeBtn = document.getElementById('quick-close');
+  if (!fab || !panel) return;
+
+  const togglePanel = (open) => {
+    const isOpen = typeof open === 'boolean' ? open : !panel.classList.contains('open');
+    panel.classList.toggle('open', isOpen);
+    fab.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  fab.addEventListener('click', () => togglePanel());
+  if (closeBtn) closeBtn.addEventListener('click', () => togglePanel(false));
+
+  panel.querySelectorAll('[data-quick-link]').forEach(link => {
+    link.addEventListener('click', () => togglePanel(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') togglePanel(false);
+  });
+}
+
+/* ── SCROLL PROGRESS ─────────────────────────────────────── */
+
+function initScrollProgress() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+
+  const update = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = height > 0 ? Math.min(scrollTop / height, 1) : 0;
+    bar.style.transform = `scaleX(${progress})`;
+  };
+
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+}
+
+/* ── SCROLL SPY ───────────────────────────────────────────── */
+
+function initScrollSpy() {
+  const sectionIds = [
+    'hero', 'overview', 'about', 'services', 'projects', 'experience',
+    'contract-work', 'pakistan-automation', 'team', 'policies', 'contact',
+  ];
+  const sections = sectionIds
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  const linkSelector = sectionIds.map(id => `a[href="#${id}"]`).join(', ');
+  const links = document.querySelectorAll(linkSelector);
+  if (!sections.length || !links.length) return;
+
+  const setActive = (id) => {
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === `#${id}`);
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setActive(entry.target.id);
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+}
+
+/* ── COLLAPSIBLE SECTIONS ─────────────────────────────────── */
+
+function initCollapsibles() {
+  const sections = document.querySelectorAll('[data-collapsible="true"]');
+  if (!sections.length) return;
+
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
+
+  const setCollapsed = (section, shouldCollapse) => {
+    const content = section.querySelector('.section-content');
+    const toggle = section.querySelector('[data-section-toggle]');
+    if (!content || !toggle) return;
+
+    section.classList.toggle('is-collapsed', shouldCollapse);
+    toggle.setAttribute('aria-expanded', String(!shouldCollapse));
+    toggle.textContent = shouldCollapse ? 'Expand Section' : 'Collapse Section';
+  };
+
+  const apply = () => {
+    sections.forEach(section => setCollapsed(section, mobileQuery.matches));
+  };
+
+  apply();
+  mobileQuery.addEventListener('change', apply);
+
+  sections.forEach(section => {
+    const toggle = section.querySelector('[data-section-toggle]');
+    if (!toggle) return;
+    toggle.addEventListener('click', () => {
+      const isCollapsed = section.classList.contains('is-collapsed');
+      setCollapsed(section, !isCollapsed);
+    });
+  });
+}
+
+/* ── PROJECT FILTER + MODAL ──────────────────────────────── */
+
+function initProjectFilters() {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  if (!buttons.length || !cards.length) return;
+
+  const applyFilter = (filter) => {
+    cards.forEach(card => {
+      const tags = (card.getAttribute('data-tags') || '')
+        .split(',')
+        .map(tag => tag.trim())
+        .filter(Boolean);
+      const match = filter === 'all' || tags.includes(filter);
+      card.classList.toggle('is-hidden', !match);
+    });
+  };
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-selected', 'true');
+      applyFilter(btn.getAttribute('data-filter'));
+    });
+  });
+}
+
+function initProjectModal() {
+  const modal = document.getElementById('project-modal');
+  if (!modal) return;
+
+  const title = document.getElementById('modal-title');
+  const category = document.getElementById('modal-category');
+  const tech = document.getElementById('modal-tech');
+  const summary = document.getElementById('modal-summary');
+  const result = document.getElementById('modal-result');
+  const tags = document.getElementById('modal-tags');
+
+  const openModal = (index) => {
+    const project = PROJECTS[index];
+    if (!project) return;
+    title.textContent = project.title;
+    category.textContent = project.category;
+    tech.textContent = `Technology: ${project.tech}`;
+    summary.textContent = project.summary;
+    result.textContent = `Result: ${project.result}`;
+    tags.textContent = `Tags: ${(project.tags || []).join(', ') || 'General'}`;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  };
+
+  document.querySelectorAll('[data-project-index]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const index = Number(btn.getAttribute('data-project-index'));
+      openModal(index);
+    });
+  });
+
+  modal.querySelectorAll('[data-modal-close]').forEach(el => {
+    el.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
   });
 }
 
@@ -550,6 +746,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   initNavbar();
+  initQuickMenu();
+  initScrollProgress();
+  initScrollSpy();
+  initCollapsibles();
+  initProjectFilters();
+  initProjectModal();
   initCounters();
   initContactForm();
 });
